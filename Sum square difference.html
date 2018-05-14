@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sum square difference</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function sumSquareDifference(num) {
+        var sumOfSpuares=0;
+        var sum=0;
+        for (var i=1; i<=num; i++) {
+          sumOfSpuares+=Math.pow(i, 2);
+          sum+=i;
+        }
+        return Math.pow(sum, 2)-sumOfSpuares;
+      }
+
+      console.log(sumSquareDifference(100))
+    </script>
+  </body>
+</html>

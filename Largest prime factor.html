@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Largest prime factor</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var num=600851475143;
+      var factor=2;
+      var largest;
+      while(factor<=num) {
+        while(num%factor==0) {
+          num/=factor;
+          largest=factor;
+        }
+        factor++;
+      }
+      console.log(largest);
+    </script>
+  </body>
+</html>

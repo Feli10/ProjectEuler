@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Smallest multiple</title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    //Euclidean algorithm
+    function gcd(a, b) {
+      var r;
+      while (a % b != 0) {
+        r = a % b;
+        a = b;
+        b = r;
+      }
+      return b;
+    }
+    //Euclidean algorithm recursion
+    function gcd2(a, b) {
+      return (b == 0) ? a : gcd2(b, a % b);
+    }
+    //My algorithm
+    function gcd3(a, b) {
+      for (var i = a; i >= 1; i--) {
+        if (a % i == 0 && b % i == 0) {
+          return i;
+        }
+      }
+    }
+
+    function smallestMultiple(num) {
+      var commonMultiple = 1;
+      for (var i = 2; i <= num; i++) {
+        commonMultiple = commonMultiple * i / gcd(commonMultiple, i);
+      }
+      return commonMultiple;
+    }
+
+    console.log(smallestMultiple(20));
+  </script>
+</body>
+
+</html>
